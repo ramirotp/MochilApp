@@ -15,6 +15,18 @@ const routes = [
     
   },
   {
+    path: '/home',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: () => import('@/views/Home.vue'),
+      },
+    ],
+    
+  },
+  {
     path: '/login',
     component: () => import('@/components/Login.vue'),
   },
@@ -24,8 +36,16 @@ const routes = [
   },
   {
     path: '/newbackpack',
-    component: () => import('@/components/NewBackPack.vue'),
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'New',
+        component: () => import('@/components/NewBackPack.vue'),
+      },
+    ],
   },
+  { path: "/:pathMatch(.*)*", name: 'NotFound', component: () => import('@/components/NotFound.vue') },
 ]
 
 const router = createRouter({
