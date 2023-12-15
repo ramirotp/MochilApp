@@ -11,8 +11,9 @@
     <v-divider></v-divider>
 
     <v-list density="compact" nav>
-      <v-list-item prepend-icon="mdi-file-document-plus" title="New" value="new" @click.stop.prevent="newBackPack()"></v-list-item>
-      <v-list-item prepend-icon="mdi-exit-to-app" title="Logout" value="logout" @click.stop.prevent="logout()"></v-list-item>
+      <v-list-item prepend-icon="mdi-home" title="Inicio" value="home" @click.stop.prevent="goHome()"></v-list-item>
+      <v-list-item prepend-icon="mdi-file-document-plus" title="Nuevo" value="new" @click.stop.prevent="newBackPack()"></v-list-item>
+      <v-list-item prepend-icon="mdi-exit-to-app" title="Salir" value="logout" @click.stop.prevent="logout()"></v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -27,8 +28,11 @@
               localStorage.removeItem("MochilApptoken");
               this.$router.push("/login");
           },
-          logout() {
+          newBackPack() {
               this.$router.push("/newbackpack");
+          },
+          goHome() {
+              this.$router.push("/home");
           },
           }
       }
