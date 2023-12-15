@@ -11,6 +11,7 @@
     <v-divider></v-divider>
 
     <v-list density="compact" nav>
+      <v-list-item prepend-icon="mdi-file-document-plus" title="New" value="new" @click.stop.prevent="newBackPack()"></v-list-item>
       <v-list-item prepend-icon="mdi-exit-to-app" title="Logout" value="logout" @click.stop.prevent="logout()"></v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -25,6 +26,9 @@
           logout() {
               localStorage.removeItem("MochilApptoken");
               this.$router.push("/login");
+          },
+          logout() {
+              this.$router.push("/newbackpack");
           },
           }
       }

@@ -22,6 +22,10 @@ const routes = [
     path: '/signup',
     component: () => import('@/components/Signup.vue'),
   },
+  {
+    path: '/newbackpack',
+    component: () => import('@/components/NewBackPack.vue'),
+  },
 ]
 
 const router = createRouter({
